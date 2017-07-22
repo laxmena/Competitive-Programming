@@ -16,7 +16,7 @@ The template which I use for competitive Programming can be found in the above l
 
 ## Connect with me
 
-[laxmena @ Facebook](https://fb.com/lakshmanan.meiyappan)
-[laxmena @ LinkedIn](https://www.linkedin.com/in/lakshmanan-meiyappan-b14b31a8/)
-[laxmena @ Medium](https://medium.com/@laxmena)
-[laxmena'w Website](https://laxmena.github.io/website)
+* [laxmena @ Facebook](https://fb.com/lakshmanan.meiyappan)
+* [laxmena @ LinkedIn](https://www.linkedin.com/in/lakshmanan-meiyappan-b14b31a8/)
+* [laxmena @ Medium](https://medium.com/@laxmena)
+* [laxmena'w Website](https://laxmena.github.io/website)
