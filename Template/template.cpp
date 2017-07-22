@@ -8,9 +8,9 @@
  *			GitHub		: https://github.com/laxmena			
  *	
  *			Website		: https://laxmena.github.io/website/
- *			Medium		: www.medium.com/@laxmena
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template.cpp
  *	
  */
 
@@ -41,31 +41,47 @@
 
 using namespace std;
 
-#define SI(t) 	scanf("%d",&t)
-#define SL(t) 	scanf("%ld",&t)
+#define SI (t) 	scanf("%d",&t)
+#define SL (t) 	scanf("%ld",&t)
 #define SLL(t) 	scanf("%lld",&t)
-#define SC(t) 	scanf("%c",&t)
-#define SS(t) 	scanf("%s",t)
-#define SF(t) 	scanf("%f",&t)
+#define SC (t) 	scanf("%c",&t)
+#define SS (t) 	cin>>t
+#define SF (t) 	scanf("%f",&t)
 #define SLF(t) 	scanf("%lf",&t)
-#define all(cont) 	cont.begin(), cont.end()
-#define rall(cont) 	cont.end(), cont.begin()
 #define MP 		make_pair
 #define PB 		push_back
 #define MAX 	(int)1e9
 #define EPS 	1e-9
 #define PI 		3.1415926535897932384626433832795
 #define MOD 	1000000007
+#define all (container)  	container.begin(), container.end()
+#define rall(container) 	container.end(), container.begin()
+#define FOR  (i,from,till,increment) for(int i=from;i<till;i += increment)
+#define RFOR (i,from,till,decrement) for(int i=from; i>=till; i-=decrement)
+#define REP  (i,j) FOR(i,0,j,1)
+#define RREP (i,j) RFOR(i,j,0,1)
+#define FOREACH (it, container) for(auto it=container.begin(); it != container.end(); it++)
 
 const double pi=acos(-1.0);
 typedef vector<int> VI;
+typedef vector<float> VF;
 typedef vector<string> VS;
 typedef set<int> SETI;
+typedef set<char> SETC;
+typedef set<float> SETF;
+typedef stack<int> STACKI;
+typedef stack<char> STACKC;
+typedef stack<float> STACKF;
+typedef queue<int> QI;
+typedef queue<char> QC;
+typedef queue<float> QF;
+typedef map<int,int> MAPII;
+typedef map<int,char> MAPIC;
+typedef map<char,int> MAPCI;
 typedef long int l;
 typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
-
 
 int main(){
 	cout<<"Hello World!";
