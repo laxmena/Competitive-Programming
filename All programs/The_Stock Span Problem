@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdio>
+#include <stack>
+#include <vector>
+
+using namespace std;
+
+//http://www.geeksforgeeks.org/the-stock-span-problem/
+//the_stock_span_problem.cpp
+
+
+int main(){
+	int n,i,t;
+	vector<int> v;
+	for(i=0;i<n;i++){
+		scanf("%d",&t);
+		v.push_back(t);
+	}
+	int s[n];
+	claculateSpan(v,n,s);
+	for(i=0;i<n;i++)
+		cout<<s[i]<<" ";
+	return 0;
+}
