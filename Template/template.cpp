@@ -41,26 +41,27 @@
 
 using namespace std;
 
-#define SI (t) 	scanf("%d",&t)
-#define SL (t) 	scanf("%ld",&t)
+#define SI(t) 	scanf("%d",&t)
+#define SL(t) 	scanf("%ld",&t)
 #define SLL(t) 	scanf("%lld",&t)
-#define SC (t) 	scanf("%c",&t)
-#define SS (t) 	cin>>t
-#define SF (t) 	scanf("%f",&t)
+#define SC(t) 	scanf("%c",&t)
+#define SS(t) 	cin>>t
+#define SF(t) 	scanf("%f",&t)
 #define SLF(t) 	scanf("%lf",&t)
+#define REP(i, j) FOR(i, 0, j, 1)
+#define RREP(i, j) RFOR(i, j, 0, 1)
+#define all(container) container.begin(), container.end()
+#define rall(container)	container.end(), container.begin()
+#define RFOR(i, from, till, dec) for(int i=from; i>=till; i-=dec)
+#define FOR(i, from, till, inc) for(int i=(from); i<(till); i+=(inc))
+#define FOREACH(it, container) for(auto it=container.begin(); it != container.end(); it++)
+
 #define MP 		make_pair
 #define PB 		push_back
 #define MAX 	(int)1e9
 #define EPS 	1e-9
 #define PI 		3.1415926535897932384626433832795
 #define MOD 	1000000007
-#define all (container)  	container.begin(), container.end()
-#define rall(container) 	container.end(), container.begin()
-#define FOR  (i,from,till,increment) for(int i=from;i<till;i += increment)
-#define RFOR (i,from,till,decrement) for(int i=from; i>=till; i-=decrement)
-#define REP  (i,j) FOR(i,0,j,1)
-#define RREP (i,j) RFOR(i,j,0,1)
-#define FOREACH (it, container) for(auto it=container.begin(); it != container.end(); it++)
 
 const double pi=acos(-1.0);
 typedef vector<int> VI;
