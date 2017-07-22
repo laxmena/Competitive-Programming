@@ -52,9 +52,9 @@ using namespace std;
 #define RREP(i, j) RFOR(i, j, 0, 1)
 #define all(container) container.begin(), container.end()
 #define rall(container)	container.end(), container.begin()
-#define RFOR(i, from, till, dec) for(int i=from; i>=till; i-=dec)
-#define FOR(i, from, till, inc) for(int i=(from); i<(till); i+=(inc))
-#define FOREACH(it, container) for(auto it=container.begin(); it != container.end(); it++)
+#define RFOR(i, from, till, dec) for(i=from; i>=till; i-=dec)
+#define FOR(i, from, till, inc) for(i=(from); i<(till); i+=(inc))
+#define FOREACH(it, container) for(it=container.begin(); it != container.end(); it++)
 
 #define MP 		make_pair
 #define PB 		push_back
@@ -66,10 +66,16 @@ using namespace std;
 const double pi=acos(-1.0);
 typedef vector<int> VI;
 typedef vector<float> VF;
+typedef vector<bool> VB;
 typedef vector<string> VS;
+typedef vector<long> VL;
+typedef list<int> LI;
+typedef list<string> LS;
 typedef set<int> SETI;
 typedef set<char> SETC;
 typedef set<float> SETF;
+typedef set<long> SETL;
+typedef set<long long> SETLL;
 typedef stack<int> STACKI;
 typedef stack<char> STACKC;
 typedef stack<float> STACKF;
@@ -83,6 +89,7 @@ typedef long int l;
 typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
+
 
 int main(){
 	cout<<"Hello World!";
