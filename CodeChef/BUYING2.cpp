@@ -92,6 +92,6 @@ typedef unsigned long long int  ull;
 
 
 int main(){
-	
+	cout<<"Hello World!";
 	return 0;
 }

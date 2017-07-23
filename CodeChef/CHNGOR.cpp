@@ -10,34 +10,12 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
  *	
  */
 
 
-#include <functional>
-#include <algorithm>
-#include <iostream>
-#include <iterator>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <stdio.h>
-#include <sstream>
-#include <numeric>
-#include <utility>
-#include <string>
-#include <vector>
-#include <bitset>
-#include <limits>
-#include <time.h>
-#include <math.h>
-#include <queue>
-#include <deque>
-#include <stack>
-#include <list>
-#include <map>
-#include <set>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -90,8 +68,19 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-
 int main(){
-	
+	int t,position;
+	l n,temp,i,ans;
+	SI(t);
+	VL frequency(32,0);
+	while(t-->0){
+		SL(n);
+		ans = 0;
+		REP(i,n){
+			SL(temp);
+			ans = ans|temp;
+		}
+		cout<<ans<<endl;
+	}
 	return 0;
 }
