@@ -6,13 +6,13 @@ int main(){
     while(T--){
         string str;
         cin>>str;
-        int ans = 0 , last = '?' , cur = 0;
-        for(auto ch : str){
-            if(ch == '=') continue;
-            if(ch != last){
+        int ans = 0 , last = ' ' , cur = 0;
+        for(int ch=0;ch<str.size();ch++){
+            if(str[ch] == '=') continue;
+            if(str[ch] != last){
                 ans = max(ans , cur);
                 cur = 1;
-                last = ch;
+                last = str[ch];
             }
             else ++cur;
         }

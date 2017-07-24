@@ -68,22 +68,14 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-//Unsolved
 int main(){
-	l a,b,count,j,i,computeVal;
-	SL(a);
-	SL(b);
+	l a,b,count,j,i;
+	SL(a); SL(b);
 	count = 0;
-	j = 2;
-	l square = 4;
-	while(true){
-		if(j > sqrt(a*b)) break;
-		FOR(i,1,a+1,1){
-			if(square <= pow(i,2)) break;
-			if((square-pow(i,2)) <= b) count++;
+	FOR(i,1,a+1,1){
+		if(b >= (2*i+1)){
+			count += (int)sqrt(i*i + b) -i;
 		}
-		square += (2*j+1);
-		j++;
 	}
 	cout<<count;
 	return 0;

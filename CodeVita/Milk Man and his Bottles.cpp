@@ -1,3 +1,5 @@
+//http://www.mindxmaster.com/2015/08/best-answer-of-tcs-codevita-2015.html
+
 /*
  *  Author: Lakshmanan Meiyappan
  *  Handle: Codechef	: lax2804
@@ -10,34 +12,12 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
  *	
  */
 
 
-#include <functional>
-#include <algorithm>
-#include <iostream>
-#include <iterator>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <stdio.h>
-#include <sstream>
-#include <numeric>
-#include <utility>
-#include <string>
-#include <vector>
-#include <bitset>
-#include <limits>
-#include <time.h>
-#include <math.h>
-#include <queue>
-#include <deque>
-#include <stack>
-#include <list>
-#include <map>
-#include <set>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -93,21 +73,16 @@ typedef unsigned long long int  ull;
 
 int main(){
 	int t;
+	l quantity,bottles,temp;
 	SI(t);
-	int i,n,x,temp,minVal,sum;
-	while(t-->0){
-		SI(n); SI(x);
-		sum = 0;
-		minVal = MAX;
-		REP(i,n){
-			SI(temp);
-			sum += temp;
-			minVal = min(minVal,temp);
-		}
-		if(sum%x >= minVal)
-			cout<<-1<<endl;
-		else
-			cout<<(int)(sum/x)<<endl;
+	while(t--){
+		bottles = 0;
+		SL(quantity);
+		while(quantity > 9) {temp = quantity/10; bottles+=temp; quantity -= (temp*10);}
+		while(quantity > 6) {temp = quantity/7; bottles+=temp; quantity -= (temp*7);}
+		while(quantity > 4) {temp = quantity/5; bottles+=temp; quantity -= (temp*5);}
+		bottles += quantity;
+		printf("%ld\n",bottles);
 	}
 	return 0;
 }

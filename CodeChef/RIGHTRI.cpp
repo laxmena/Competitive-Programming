@@ -10,34 +10,12 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
  *	
  */
 
 
-#include <functional>
-#include <algorithm>
-#include <iostream>
-#include <iterator>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <stdio.h>
-#include <sstream>
-#include <numeric>
-#include <utility>
-#include <string>
-#include <vector>
-#include <bitset>
-#include <limits>
-#include <time.h>
-#include <math.h>
-#include <queue>
-#include <deque>
-#include <stack>
-#include <list>
-#include <map>
-#include <set>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -92,22 +70,21 @@ typedef unsigned long long int  ull;
 
 
 int main(){
-	int t;
+	int t,rt=0;
 	SI(t);
-	int i,n,x,temp,minVal,sum;
+	int x1,x2,y1,y2,x3,y3;
+	int a,b,c;
 	while(t-->0){
-		SI(n); SI(x);
-		sum = 0;
-		minVal = MAX;
-		REP(i,n){
-			SI(temp);
-			sum += temp;
-			minVal = min(minVal,temp);
-		}
-		if(sum%x >= minVal)
-			cout<<-1<<endl;
-		else
-			cout<<(int)(sum/x)<<endl;
+		SI(x1);SI(y1);
+		SI(x2);SI(y2);
+		SI(x3);SI(y3);
+		a = pow((x2-x1),2)+pow((y2-y1),2);
+		b = pow((x3-x2),2)+pow((y2-y3),2);
+		c = pow((x1-x3),2)+pow((y1-y3),2);
+		if(a>b && a>c) swap(a,c);
+		else if(b>c) swap(b,c);
+		if(a+b == c) rt++;
 	}
+	cout<<rt;
 	return 0;
 }
