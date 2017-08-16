@@ -10,7 +10,7 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/Template2.cpp
  *	
  */
 
@@ -68,15 +68,47 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-//Unsolved
+int weights[1001];
 int main(){
-	int t,f,b,fd,bd,pos,time,effDist;
-	SI(t);
-	while(t--){
-		SI(f); SI(b); SI(fd); SI(bd);
-		pos = 0;
-		effDist = a-b;
-		if((pos+f)>fd) {}
+	int n,k,i,j,maxVal,minVal;
+	ll cost;
+	SI(n); SI(k);
+	k -= 1;
+	REP(i,n)
+		SI(weights[i]);
+	cost = 0;
+	
+	REP(i,n-1){
+		minVal = i;
+		if(i != k){
+			FOR(j,i+1,n,1){
+				if(weights[minVal]>weights[j])
+					minVal = j;
+			}
+			if(i != minVal) {
+				swap(weights[minVal],weights[i]);
+				cost += weights[minVal]*weights[i];
+				cout<<"swap: "<<weights[i]<<" "<<weights[minVal]<<" Cost: "<<cost<<endl;
+			}
+		}
+		else{
+			maxVal = i;
+			FOR(j,i+1,n,1){
+				if(weights[maxVal]<weights[j])
+					maxVal = j;
+			}
+			if(i != maxVal) {
+				swap(weights[maxVal],weights[i]);
+				cost += weights[maxVal]*weights[i];
+				cout<<"swap: "<<weights[maxVal]<<" "<<weights[i]<<" Cost: "<<cost<<" <= max"<<endl;
+			}	
+		}
 	}
+	cout<<endl;
+	REP(i,n){
+		cout<<weights[i]<<" ";
+	}
+	cout<<endl;
+	cout<<cost;
 	return 0;
 }

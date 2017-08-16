@@ -10,7 +10,7 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/Template2.cpp
  *	
  */
 
@@ -68,15 +68,57 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-//Unsolved
+int grid[20][20]= {0};
+vector< VI > adjacencyNodes(400);
+
 int main(){
-	int t,f,b,fd,bd,pos,time,effDist;
-	SI(t);
-	while(t--){
-		SI(f); SI(b); SI(fd); SI(bd);
-		pos = 0;
-		effDist = a-b;
-		if((pos+f)>fd) {}
+	int size,i,j,Hfrom,Vfrom;
+	SI(size);
+	REP(i,size)
+		REP(j,size)
+			SI(grid[i][j]);
+
+	REP(i,size){
+		Hfrom = -1;
+		Vfrom = -1;
+		REP(j,size){
+			//Horizontal
+			if(Hfrom == -1 && grid[i][j] == 1) Hfrom = grid[i][j];
+			else if(grid[i][j] == 1){ adjacencyNodes[Hfrom].PB(grid[i][j]);
+									  adjacencyNodes[grid[i][j]].PB(Hfrom);
+									  Hfrom = grid[i][j];}
+			//Vertical
+			if(Vfrom == -1 && grid[j][i] == 1) Vfrom = grid[j][i];
+			else if(grid[j][i] == 1){ adjacencyNodes[Hfrom].PB(grid[j][i]);
+									  adjacencyNodes[grid[j][i]].PB(Hfrom);
+									  Hfrom = grid[j][i];}
+		}
 	}
+
+	int startX,startY,endX,endY;
+	VI :: iterator it;
+	int node;
+
+	SI(startX); SI(startY);
+	SI(endX); SI(endY);
+
+	QI bfsQ;
+	bfsQ.push(startX*size + startY);
+
+	int destination = endX*size + endY;
+
+	while(!bfsQ.empty()){
+		node = bfsQ.front();
+		cout<<node<<" ";
+		bfsQ.pop();
+		if(node == destination) {
+			cout<<"Path available";
+			break;
+		}
+		FOREACH(it,adjacencyNodes[node]){
+			bfsQ.push(*it);
+		}
+	}
+
 	return 0;
 }

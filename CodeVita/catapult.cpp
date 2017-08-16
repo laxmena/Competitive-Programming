@@ -10,7 +10,7 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/Template2.cpp
  *	
  */
 
@@ -68,15 +68,41 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-//Unsolved
+int grid[51][51];
+
 int main(){
-	int t,f,b,fd,bd,pos,time,effDist;
-	SI(t);
-	while(t--){
-		SI(f); SI(b); SI(fd); SI(bd);
-		pos = 0;
-		effDist = a-b;
-		if((pos+f)>fd) {}
+	int n,i,j,mid,totalCatapult,sum;
+	int leftSum,rightSum;
+	SI(n);
+	VI align(51,0);
+	totalCatapult = 0;
+	sum = 0;
+	char dummy;
+
+	FOR(i,1,n+1,1){
+		FOR(j,1,n+1,1){
+			SI(grid[i][j]);
+			if(i != n-1)
+				SC(dummy);
+			printf("j: %d",j);
+			align[j] += 1;
+		}
+		printf("\n");
 	}
+	leftSum = 0;
+	rightSum = n;
+	FOR(i,1,n+1,1){
+		sum += align[i]*(i);
+		cout<<align[i]<<" i: "<<i<<" sum: "<<sum<<endl;
+	}
+
+	FOR(i,1,n+1,1){
+		FOR(j,1,n+1,1){
+			printf("%d ",grid[i][j]);
+		}
+		printf("\n");
+	}
+	mid = int(sum/n);
+	cout<<mid;
 	return 0;
 }

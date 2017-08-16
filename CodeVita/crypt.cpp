@@ -10,7 +10,7 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/Template2.cpp
  *	
  */
 
@@ -68,15 +68,49 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-//Unsolved
+
 int main(){
-	int t,f,b,fd,bd,pos,time,effDist;
-	SI(t);
-	while(t--){
-		SI(f); SI(b); SI(fd); SI(bd);
-		pos = 0;
-		effDist = a-b;
-		if((pos+f)>fd) {}
+	int row;
+	string input;
+	SI(row); SS(input);
+	int j, len, peak, trough, inter, i, index, base, inc;
+
+	len = input.size();
+	peak = (int)(len/row);   //Number of Peaks in ZigZag pattern
+	trough = peak-1;		 //Number of Troughs in ZigZag pattern
+	inter = 2*peak - 2;		
+	vector< QI > splitCipher(row);
+
+	index = 0;
+	//Push first
+	REP(i,peak)
+		splitCipher[index].push(input[i]);
+
+	//Intermediate
+	index++;
+	base = peak;
+	while(len-base > trough){
+		FOR(i,base,base+inter,1){
+			splitCipher[index].push(input[i]);
+		}
+		index ++;
+		base += inter;
+	}
+	
+	//Trough
+	FOR(i,base,len,1)
+		splitCipher[index].push(input[i]);
+
+
+	j = 0; i = 0; inc = 1;
+	string letter;
+	while(len--){
+		letter = splitCipher[i].front();
+		splitCipher[i].pop();
+		if(letter != "X") cout<<letter;
+		i += inc;
+		if(i==(row-1)) {inc = -1;}
+		else if(i == 0) {inc = 1;}
 	}
 	return 0;
 }

@@ -10,7 +10,7 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/Template2.cpp
  *	
  */
 
@@ -33,10 +33,13 @@ using namespace std;
 #define RFOR(i, from, till, dec) for(i=from; i>=till; i-=dec)
 #define FOR(i, from, till, inc) for(i=(from); i<(till); i+=(inc))
 #define FOREACH(it, container) for(it=container.begin(); it != container.end(); it++)
+#define PIN(i) printf("%d\n",i);
+#define PL(l) printf("%ld ",l);
+#define PLN(l) printf("%lld",l);
 
 #define MP 		make_pair
 #define PB 		push_back
-#define MAX 	(int)1e9
+#define MAX 	(int)(1e9+7)
 #define EPS 	1e-9
 #define PI 		3.1415926535897932384626433832795
 #define MOD 	1000000007
@@ -68,15 +71,11 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-//Unsolved
+ll gcd(ll a,ll b){return (b==0)?a: gcd(b,a%b);}
+ll lcm(ll a, ll b){return (a*b)/gcd(a,b);}
+ll modpow(ll a,ll n,ll temp){ll res=1,y=a;while(n>0){if(n&1)res=(res*y)%temp;y=(y*y)%temp;n/=2;}return res%temp;} 
+
 int main(){
-	int t,f,b,fd,bd,pos,time,effDist;
-	SI(t);
-	while(t--){
-		SI(f); SI(b); SI(fd); SI(bd);
-		pos = 0;
-		effDist = a-b;
-		if((pos+f)>fd) {}
-	}
+	cout<<"Hello World!";
 	return 0;
 }

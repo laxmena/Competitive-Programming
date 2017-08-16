@@ -10,7 +10,7 @@
  *			Website		: https://laxmena.github.io/website/
  *
  *			Email		: lakshmanan.meiyappan@gmail.com
- *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/template2.cpp
+ *			Attribution : https://github.com/laxmena/Competitive-Programming/blob/master/Template/Template2.cpp
  *	
  */
 
@@ -68,15 +68,48 @@ typedef unsigned long int ul;
 typedef long long int ll;
 typedef unsigned long long int  ull;
 
-//Unsolved
+struct pos{
+	int x,y;
+}result;
+
+void getTileCoordinates(l tileNum){
+    int intRoot=floor(sqrt(tileNum));
+
+    int x=(round(intRoot/2)*pow(-1,intRoot+1))+(pow(-1,intRoot+1)*(((intRoot*(intRoot+1))-tileNum)-abs((intRoot*(intRoot+1))-tileNum))/2);
+
+    int y=(round(intRoot/2)*pow(-1,intRoot))+(pow(-1,intRoot+1)*(((intRoot*(intRoot+1))-tileNum)+abs((intRoot*(intRoot+1))-tileNum))/2);
+    
+    result.x = x;
+    result.y = y;
+    return;
+}
+
+//Sieve of Sundaram
 int main(){
-	int t,f,b,fd,bd,pos,time,effDist;
-	SI(t);
-	while(t--){
-		SI(f); SI(b); SI(fd); SI(bd);
-		pos = 0;
-		effDist = a-b;
-		if((pos+f)>fd) {}
+	l i,n,j,tileNum,intRoot,t,searchPrime;
+	SL(t);
+	while(t-->0){
+	n = 1000000;
+	VI prime;
+	int nNew = (n-2)/2;
+	vector<bool> marked(n+1,true);
+	for(i=1;i<nNew+1;i++){
+		j = i;
+		while((i + j + 2*i*j) <= nNew){
+			marked[i + j + 2*i*j] = false;
+			j++;
+		}
 	}
-	return 0;
+	for(i=1;i<nNew+1;i++)
+		if(marked[i]) prime.PB(2*i+1);
+	SL(searchPrime);
+	REP(i,prime.size()){
+		if(prime[i] == searchPrime){
+			getTileCoordinates(i);
+		}
+	}
+
+	cout<<result.x<<" "<<result.y<<endl;
+	}
+	return 0;	
 }
